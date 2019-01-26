@@ -40,9 +40,6 @@ J = (-y' * log(sigmoid(X * theta)) - ...
     (1-y)' * log( 1-sigmoid(X*theta) ))/m + ...
     lambda / (2*m) * sum(theta(2:end) .* theta(2:end));
 
-disp(size(X));
-disp(size(theta));
-
 grad(1) = X(:, 1)' * (sigmoid(X * theta) - y)/m;
 grad(2: end) = X(:, 2: end)' * (sigmoid(X * theta) - y) / m + ...
     lambda/m * theta(2:end);
